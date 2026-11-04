@@ -212,3 +212,81 @@ h1 em, h2 em { font-style: italic; color: var(--accent); }
 .soon-facts a { text-decoration: none; }
 .soon-facts a:hover { text-decoration: underline; }
 .soon-legal { text-align: center; font-size: 13.5px; color: var(--ink-soft); margin: 0; padding: 20px 0 28px; }
+
+/* =========================================================================
+   Zacht & fluffy: classy care, met een vleugje zachtheid (november 2026)
+   ========================================================================= */
+:root {
+  --blush: #f4ddd3;
+  --blush-deep: #e3a993;
+  --cloud: #fffcf8;
+  --sage-mist: #e3e6d6;
+  --radius: 28px;
+  --shadow-soft: 0 28px 60px -36px rgba(120, 72, 52, .38), 0 2px 6px -2px rgba(120, 72, 52, .08);
+}
+
+/* woordmerk: alınea met een blozend puntje op de i */
+.brand b, .soon-brand b { text-transform: lowercase; letter-spacing: -0.01em; }
+.dot-i { position: relative; display: inline-block; }
+.dot-i::after { content: ""; position: absolute; left: 50%; top: .16em; width: .17em; height: .17em; border-radius: 50%; background: var(--blush-deep); transform: translateX(-50%); }
+
+/* labels als zachte pilletjes */
+.eyebrow { display: inline-block; padding: 7px 15px; border-radius: 999px; background: var(--blush); color: var(--ink); letter-spacing: .12em; }
+.band .eyebrow { background: rgba(244, 221, 211, .16); color: var(--blush); }
+
+/* knoppen die licht opveren */
+.btn { transition: transform .25s cubic-bezier(.3, 1.4, .5, 1), box-shadow .25s, background-color .2s, color .2s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -16px rgba(56, 39, 24, .5); }
+.btn.ghost { background: rgba(255, 252, 248, .65); border-color: var(--line); }
+.btn.ghost:hover { background: var(--cloud); color: var(--ink); border-color: var(--ink); }
+.btn.light:hover { background: var(--blush); border-color: var(--blush); }
+
+/* wolkachtige achtergronden */
+.hero, .soon-page {
+  background:
+    radial-gradient(42% 60% at 88% 18%, rgba(244, 221, 211, .95), transparent 70%),
+    radial-gradient(38% 55% at 6% 96%, rgba(227, 230, 214, .9), transparent 70%),
+    radial-gradient(30% 40% at 55% 0%, rgba(255, 252, 248, .7), transparent 70%),
+    var(--cream);
+}
+.section.alt {
+  background:
+    radial-gradient(40% 60% at 100% 0%, rgba(244, 221, 211, .55), transparent 70%),
+    radial-gradient(35% 50% at 0% 100%, rgba(227, 230, 214, .6), transparent 70%),
+    var(--cream);
+  border-color: transparent;
+}
+.band { background: radial-gradient(45% 80% at 92% 8%, rgba(227, 169, 147, .28), transparent 65%), radial-gradient(40% 70% at 0% 100%, rgba(83, 95, 69, .35), transparent 70%), var(--ink); }
+
+/* kaarten: rond, zacht, zwevend */
+.today, .advice, .hours-card, .team li { border: 0; border-radius: var(--radius); background: var(--cloud); box-shadow: var(--shadow-soft); }
+.today { border-radius: 36px; }
+
+.treatments { gap: 16px; border-top: 0; }
+.treatments li, .treatments li:nth-child(even) { position: relative; padding: 30px 30px 32px 84px; border: 0; border-radius: 24px; background: var(--cloud); box-shadow: var(--shadow-soft); transition: transform .3s ease; }
+.treatments li::before { content: ""; position: absolute; left: 28px; top: 30px; width: 36px; height: 36px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, var(--blush) 55%, var(--blush-deep)); }
+.treatments li:hover { transform: translateY(-3px); }
+@media (max-width: 760px) { .treatments li, .treatments li:nth-child(even) { padding: 24px 22px 26px 72px; } .treatments li::before { left: 22px; top: 25px; width: 32px; height: 32px; } }
+
+.prices { background: var(--cloud); border-top: 0; border-radius: var(--radius); padding: 8px clamp(20px, 3vw, 36px); box-shadow: var(--shadow-soft); }
+.prices li:last-child { border-bottom: 0; }
+.prices .price { color: var(--ink); }
+
+.chips li { background: var(--cloud); border-color: transparent; box-shadow: 0 10px 24px -18px rgba(120, 72, 52, .5); }
+.advice .mark { background: var(--blush); color: var(--ink); }
+
+.pillars { background: rgba(244, 221, 211, .14); border-radius: var(--radius); }
+.pillars li { background: rgba(56, 39, 24, .55); }
+.pillars b { color: var(--blush); }
+
+.team .ph { background: radial-gradient(circle at 32% 28%, #fff 0, var(--blush) 48%, #ecc9bb 100%); color: var(--ink); }
+.team .ph.future { background: radial-gradient(circle at 32% 28%, #fff 0, var(--sage-mist) 60%, #d5dac4 100%); }
+
+.soon-facts { border-top: 0; background: rgba(255, 252, 248, .7); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .treatments li { transition: none; }
+  .btn:hover, .treatments li:hover { transform: none; }
+}
+.soon-brand { display: flex; flex-direction: column; align-items: center; }
+.nowrap { white-space: nowrap; }
