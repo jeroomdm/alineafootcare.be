@@ -1,0 +1,5 @@
+# Een beveiligingsprobleem gevonden op deze website? Laat het ons weten, we antwoorden snel.
+Contact: mailto:hallo@havenlicht.be
+Expires: 2027-11-12T00:00:00.000Z
+Preferred-Languages: nl, en
+Canonical: https://alineafootcare.be/.well-known/security.txt
